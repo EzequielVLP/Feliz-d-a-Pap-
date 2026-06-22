@@ -129,12 +129,17 @@ window.onload = () => {
     const musica = document.getElementById("musica");
     const startBtn = document.getElementById("startBtn");
 
-    startBtn.addEventListener("click", () => {
-        musica.play();
-        escribir();
-        startBtn.style.display = "none";
-    });
+startBtn.addEventListener("click", () => {
+    musica.play();
 
+    sonidoTecla.play()
+        .then(() => console.log("Tecla reproducida"))
+        .catch(error => console.error("Error:", error));
+
+    escribir();
+    startBtn.style.display = "none";
+});
+   
 };
     
 const mensaje = `Para mi papá,
