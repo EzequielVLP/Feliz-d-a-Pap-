@@ -98,6 +98,8 @@
 <script>
 
    const sonidoTecla = new Audio("tecla.mp3");
+   sonidoTecla.preload = "auto";
+sonidoTecla.load();
 
    const textElement = document.getElementById("text");
 const photo = document.getElementById("photo");
