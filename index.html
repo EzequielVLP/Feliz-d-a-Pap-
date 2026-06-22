@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi Papá ❤️+</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        background:#111;
+        color:#f5f5f5;
+        font-family:'Courier New', monospace;
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
+
+    .container{
+        max-width:800px;
+        width:100%;
+    }
+
+    #text{
+        font-size:1.2rem;
+        line-height:1.8;
+        white-space:pre-wrap;
+    }
+
+    .cursor{
+        display:inline-block;
+        width:10px;
+        animation:blink .8s infinite;
+    }
+
+    @keyframes blink{
+        50%{
+            opacity:0;
+        }
+    }
+
+    .photo{
+        display:none;
+        margin-top:40px;
+        text-align:center;
+        animation:fadeIn 2s ease;
+    }
+
+    .photo img{
+        width:250px;
+        max-width:100%;
+        border-radius:15px;
+        box-shadow:0 0 20px rgba(255,255,255,.2);
+    }
+
+    .photo p{
+        margin-top:15px;
+        font-size:1.3rem;
+    }
+
+    @keyframes fadeIn{
+        from{
+            opacity:0;
+            transform:translateY(20px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div id="text"></div><span class="cursor">|</span>
+
+    <div class="photo" id="photo">
+        <!-- Cambia "foto.jpg" por tu imagen -->
+        <img src="foto.jpg" alt="Nosotros">
+        <p>❤️ Feliz Día del Padre ❤️</p>
+    </div>
+</div>
+
+<script>
+
+const mensaje = `Para mi papá,
+
+Hay muchas cosas que quisiera decirte y que a veces no encuentro la forma de expresar.
+
+Gracias por cada esfuerzo que has hecho por mí, por cada consejo, por cada momento en el que estuviste presente incluso cuando las cosas no eran fáciles.
+
+Tal vez no suelo decirtelo, pero valoro todo lo que has hecho para ayudarme a crecer, lo que haas hecho por mi mamá y mi hermana.
+
+Que aunque se sabe bien que no es tu responsabilidad, siempre estás para nosotros cuando lo necesitamos.
+
+Quiero que sepas que estas siendo un gran padre, el pade que me hubiera gustado tener desde pequeño, Caleb es un niño muy afortunado ya que no todos tienen una figura paterna así.
+
+Gracias por enseñarme con tu ejemplo, por tu paciencia, por tu trabajo y por el cariño que siempre me has brindado.
+
+También quiero que sepas que admiro tu fortaleza y que me siento muy orgulloso de poder llamarte papá.
+
+Hoy, en este Día del Padre, quiero desearte felicidad, salud y muchos momentos especiales.
+
+Te quiero mucho.
+
+Con cariño,
+
+Tu hijo.`;
+
+const textElement = document.getElementById("text");
+const photo = document.getElementById("photo");
+
+let i = 0;
+
+function escribir(){
+    if(i < mensaje.length){
+        textElement.innerHTML += mensaje.charAt(i);
+        i++;
+        setTimeout(escribir, 40);
+    }else{
+        photo.style.display = "block";
+    }
+}
+
+escribir();
+
+</script>
+
+</body>
+</html>
