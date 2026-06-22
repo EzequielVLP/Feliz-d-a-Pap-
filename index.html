@@ -113,8 +113,9 @@ function escribir(){
         textElement.innerHTML += mensaje.charAt(i);
 
         if(i % 3 === 0){
-            sonidoTecla.currentTime = 0;
-            sonidoTecla.play().catch(() => {});
+           const tecla = new Audio("tecla.mp3");
+tecla.volume = 0.3;
+tecla.play().catch(() => {});
         }
 
         i++;
